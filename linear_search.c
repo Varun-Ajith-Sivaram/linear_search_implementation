@@ -1,19 +1,21 @@
 #include<stdio.h>
 
-#define size 10 //size of array is initialized to 10 
+void Linear_Search(int[],int,int);
 
 void main()
 {
-    int a[size],i,n,element,flag=0;
+    int size,element;
 
     printf("\tLinear Search Implementation\n");
     
-    printf("\n Enter the no. of elements in the array: ");
-    scanf("%d",&n);
-
+    printf("\n Enter the no. of elements: ");
+    scanf("%d",&size);
+    
+    int a[size];
+    
     printf("\n Enter the elements: \n");
 
-        for(i=0;i<n;i++)
+        for(int i=0;i<size;i++)
         {
             scanf("%d",&a[i]);
         }
@@ -21,7 +23,15 @@ void main()
     printf("\n Enter the element to be searched: ");
     scanf("%d",&element);
 
-    for(i=0;i<n;i++)
+    Linear_Search(a,element,size);
+    
+}
+
+void Linear_Search(int a[],int element,int n)
+{
+    int flag=0;
+    
+    for(int i=0;i<n;i++)
     {
         if(a[i]==element)
         {
